@@ -23,7 +23,7 @@ def transcode_pyav(input_filename, output_filename):
 
     start_write_time = time.time()
     output_container = av.open(output_filename, 'w')
-    output_stream = output_container.add_stream('pcm_s16le', rate=48000)
+    output_stream = output_container.add_stream('pcm_s16le', rate=16000)
 
     for packet in input_container.demux(input_stream):
         for frame in packet.decode():
